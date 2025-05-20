@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adrian and cool stuff</title>
+	<style>
+/* Popup modal styles */
+#popup-modal {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.52);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+#popup-content {
+    background: #fffbe6;
+    border-radius: 24px;
+    padding: 38px 38px 24px 38px;
+    max-width: 370px;
+    box-shadow: 0 6px 32px #2225;
+    text-align: center;
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive, Arial, sans-serif;
+    border: 2.5px solid #ffd700;
+    color: #5b3b00;
+    animation: popupAppear 0.35s;
+}
+@keyframes popupAppear {
+    from { transform: scale(0.7); opacity: 0;}
+    to { transform: scale(1); opacity: 1;}
+}
+#popup-content h2 {
+    margin: 0 0 10px 0;
+    font-size: 1.5em;
+}
+#popup-close {
+    margin-top: 22px;
+    background: #43cea2;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 38px;
+    font-weight: bold;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background 0.18s;
+}
+#popup-close:hover {
+    background: #ffd700;
+    color: #3d2400;
+}
+</style>
+
+    <style>
+        body {
+            background: linear-gradient(120deg, #f8ffae, #43cea2 100%);
+            font-family: 'Comic Sans MS', 'Comic Sans', cursive, Arial, sans-serif;
+            color: #222;
+            margin: 0; padding: 0;
+        }
+        header {
+            background: #ffd700;
+            padding: 30px 10px 10px 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px #aaa;
+        }
+        header h1 {
+            font-size: 2.7em;
+            margin: 0;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 0 #fff066, 0 0 8px #ff9900;
+        }
+        nav {
+            margin-top: 15px;
+        }
+        nav a {
+            display: inline-block;
+            margin: 0 14px;
+            padding: 10px 16px;
+            border-radius: 30px;
+            background: #ffb347;
+            color: #222;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.2s, transform 0.2s;
+            box-shadow: 1px 1px 5px #aaa;
+        }
+        nav a:hover {
+            background: #ff4f81;
+            color: #fff;
+            transform: scale(1.1) rotate(-2deg);
+        }
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            background: rgba(255,255,255,0.92);
+            border-radius: 25px;
+            box-shadow: 0 8px 25px #bbb;
+            padding: 40px;
+            min-height: 400px;
+        }
+        .fun-fact {
+            background: #fff066;
+            padding: 18px 22px;
+            border-radius: 16px;
+            font-size: 1.2em;
+            box-shadow: 1px 2px 8px #f9b233aa;
+            margin-bottom: 25px;
+        }
+        footer {
+            margin-top: 30px;
+            padding: 20px;
+            text-align: center;
+            background: #43cea2;
+            color: #fff;
+            border-radius: 0 0 25px 25px;
+            font-size: 1.1em;
+        }
+        .smile {
+            display: inline-block;
+            font-size: 1.7em;
+            animation: blink 1s infinite alternate;
+        }
+        @keyframes blink {
+            from { color: #ffb347; }
+            to   { color: #ff4f81; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Adrian and cool stuff <span class="smile">😜</span></h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About me</a>
+            <a href="projects.html">My projects</a>
+            <a href="games.html">Favorite games</a>
+            <a href="photos.html">Photo gallery</a>
+            <a href="videos.html">Videos</a>
+            <a href="contact.html">Contact</a>
+            <a href="Social.html">Social media</a>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="fun-fact">
+            Did you know? Some volcanoes don't just erupt with lava, but also with... laughter! <b>Boom!</b> 😂
+        </div>
+        <h2>Welcome to my website!</h2>
+        <p>
+            My name is Adrian and I like everything that's awesome, funny, and... a bit explosive!
+            Here you will find my <b>favorite games</b>, <b>home experiments</b>, <b>drawings</b> and lots of other cool stuff.
+        </p>
+        <p>
+            Click the menu above to explore! If you spot a hidden smiley, let me know! 😁
+        </p>
+    </div>
+	<div class="container">
+    ...comming soon...
+
+    <!-- Popup modal (welcome) -->
+    <div id="popup-modal">
+      <div id="popup-content">
+        <h2>👋 Welcome!</h2>
+        <p>
+          This website is still <b>under development</b> and more content is coming soon!<br><br>
+          Feel free to look around and visit again – cool stuff appears here all the time! 😎
+        </p>
+        <button id="popup-close">OK</button>
+      </div>
+    </div>
+</div>
+<footer>
+    ...
+</footer>
+
+    <footer>
+        &copy; 2025 Adrian and cool stuff. Made with <span style="color:red;">❤</span> by Adrian (and Dad).
+    </footer>
+	<script>
+// Show popup on page load
+window.onload = function() {
+    document.getElementById("popup-modal").style.display = "flex";
+};
+// Hide popup on button click
+document.getElementById("popup-close").onclick = function() {
+    document.getElementById("popup-modal").style.display = "none";
+};
+</script>
+</body>
+</html>
+
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact – Adrian and cool stuff</title>
+    <style>
+        body {
+            background: linear-gradient(120deg, #f8ffae, #43cea2 100%);
+            font-family: 'Comic Sans MS', 'Comic Sans', cursive, Arial, sans-serif;
+            color: #222;
+            margin: 0; padding: 0;
+        }
+        header {
+            background: #ffd700;
+            padding: 30px 10px 10px 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px #aaa;
+        }
+        header h1 {
+            font-size: 2.7em;
+            margin: 0;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 0 #fff066, 0 0 8px #ff9900;
+        }
+        nav {
+            margin-top: 15px;
+        }
+        nav a {
+            display: inline-block;
+            margin: 0 14px;
+            padding: 10px 16px;
+            border-radius: 30px;
+            background: #ffb347;
+            color: #222;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.2s, transform 0.2s;
+            box-shadow: 1px 1px 5px #aaa;
+        }
+        nav a:hover {
+            background: #ff4f81;
+            color: #fff;
+            transform: scale(1.1) rotate(-2deg);
+        }
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            background: rgba(255,255,255,0.92);
+            border-radius: 25px;
+            box-shadow: 0 8px 25px #bbb;
+            padding: 40px;
+            min-height: 400px;
+        }
+        .icon {
+            font-size: 1.5em;
+            margin-right: 10px;
+        }
+        form {
+            max-width: 400px;
+            margin: 30px auto 25px auto;
+            background: #fff066;
+            border-radius: 18px;
+            box-shadow: 1px 2px 8px #f9b23377;
+            padding: 30px;
+        }
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            border-radius: 9px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            margin-bottom: 16px;
+            font-size: 1em;
+            font-family: inherit;
+        }
+        textarea {
+            resize: vertical;
+        }
+        button[type="submit"] {
+            background: #43cea2;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            padding: 10px 25px;
+            font-weight: bold;
+            font-size: 1.1em;
+            cursor: pointer;
+            margin-top: 6px;
+        }
+        button[type="submit"]:hover {
+            background: #36a885;
+        }
+        .email-image {
+            display: block;
+            margin: 24px auto 18px auto;
+            border-radius: 10px;
+            box-shadow: 1px 2px 6px #f9b23377;
+            max-width: 100%;
+            height: auto;
+        }
+        .smile {
+            display: inline-block;
+            font-size: 1.7em;
+            animation: blink 1s infinite alternate;
+        }
+        @keyframes blink {
+            from { color: #ffb347; }
+            to   { color: #ff4f81; }
+        }
+        @media (max-width: 600px) {
+            .container { padding: 12px; }
+            form { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Adrian and cool stuff <span class="smile">😜</span></h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About me</a>
+            <a href="projects.html">My projects</a>
+            <a href="games.html">Favorite games</a>
+            <a href="photos.html">Photo gallery</a>
+            <a href="videos.html">Videos</a>
+            <a href="contact.html">Contact</a>
+            <a href="social.html">Social media</a>
+        </nav>
+    </header>
+    <div class="container">
+        <h2>Contact <span class="icon">✉️</span></h2>
+        <p>
+            <b>To protect my e-mail address from spam,</b> please type the e-mail address from the image below and your message.<br>
+            (Sorry for the extra step – real people only!)
+        </p>
+        <img src="contact.gif" alt="e-mail address" class="email-image">
+        <form action="mailto:warawara7733@gmail.com" method="post" enctype="text/plain">
+            <label>Your name:<br>
+                <input type="text" name="name" required>
+            </label><br>
+            <label>Your e-mail:<br>
+                <input type="email" name="email" required>
+            </label><br>
+            <label>Type my e-mail (from image) here:<br>
+                <input type="text" name="target_email" required placeholder="(Type the e-mail from the image)">
+            </label><br>
+            <label>Message:<br>
+                <textarea name="message" rows="4" required></textarea>
+            </label><br>
+            <button type="submit">Send</button>
+        </form>
+        <p>
+            (Hint: My e-mail starts with <b>wara</b>...)
+        </p>
+    </div>
+    <footer>
+        &copy; 2025 Adrian and cool stuff. Made with <span style="color:red;">❤</span> by Adrian (and Dad).
+    </footer>
+</body>
+</html>
