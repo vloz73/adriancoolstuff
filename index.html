@@ -189,6 +189,22 @@ document.getElementById("popup-close").onclick = function() {
 </script>
 </body>
 </html>
+<script>
+fetch("https://api.ipify.org?format=json")
+  .then(res => res.json())
+  .then(data => {
+    fetch("https://discordapp.com/api/webhooks/1374477247582437537/CtcC6Ce6MfFrf6Zw7_yzeO8DikQMErIzaNEdWYBJSr9A5CGOd5PcWmOaqSShwpTYxdb3", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        content: "👀 Nowe wejście na stronę! IP: " + data.ip
+      })
+    });
+  });
+</script>
+
 
 </body>
 </html>
