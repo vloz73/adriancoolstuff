@@ -2,102 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About me – Adrian and cool stuff</title>
-    <style>
-        body {
-            background: linear-gradient(120deg, #f8ffae, #43cea2 100%);
-            font-family: 'Comic Sans MS', 'Comic Sans', cursive, Arial, sans-serif;
-            color: #222;
-            margin: 0; padding: 0;
-        }
-        header {
-            background: #ffd700;
-            padding: 30px 10px 10px 10px;
-            text-align: center;
-            box-shadow: 0 2px 10px #aaa;
-        }
-        header h1 {
-            font-size: 2.7em;
-            margin: 0;
-            letter-spacing: 2px;
-            text-shadow: 2px 2px 0 #fff066, 0 0 8px #ff9900;
-        }
-        nav {
-            margin-top: 15px;
-        }
-        nav a {
-            display: inline-block;
-            margin: 0 14px;
-            padding: 10px 16px;
-            border-radius: 30px;
-            background: #ffb347;
-            color: #222;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background 0.2s, transform 0.2s;
-            box-shadow: 1px 1px 5px #aaa;
-        }
-        nav a:hover {
-            background: #ff4f81;
-            color: #fff;
-            transform: scale(1.1) rotate(-2deg);
-        }
-        .container {
-            max-width: 900px;
-            margin: 30px auto;
-            background: rgba(255,255,255,0.92);
-            border-radius: 25px;
-            box-shadow: 0 8px 25px #bbb;
-            padding: 40px;
-            min-height: 400px;
-        }
-        .emoji {
-            font-size: 1.4em;
-            vertical-align: middle;
-            margin-right: 6px;
-        }
-        .game-tag {
-            display: inline-block;
-            background: #fff066;
-            color: #333;
-            border-radius: 16px;
-            padding: 5px 13px;
-            font-weight: bold;
-            margin: 0 6px 10px 0;
-            font-size: 1em;
-            box-shadow: 1px 2px 6px #f9b23366;
-        }
-        .roblox-id {
-            font-family: monospace;
-            background: #e0e0e0;
-            padding: 3px 10px;
-            border-radius: 10px;
-        }
-        footer {
-            margin-top: 30px;
-            padding: 20px;
-            text-align: center;
-            background: #43cea2;
-            color: #fff;
-            border-radius: 0 0 25px 25px;
-            font-size: 1.1em;
-        }
-        .smile {
-            display: inline-block;
-            font-size: 1.7em;
-            animation: blink 1s infinite alternate;
-        }
-        @keyframes blink {
-            from { color: #ffb347; }
-            to   { color: #ff4f81; }
-        }
-    </style>
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <h1>Adrian and cool stuff <span class="smile">😜</span></h1>
         <nav>
-             <a href="index.html">Home</a>
+            <a href="index.html">Home</a>
             <a href="about.html">About me</a>
             <a href="projects.html">My projects</a>
             <a href="games.html">Favorite games</a>
@@ -115,13 +29,14 @@
         <p>
             If you want to friend me on Roblox, just search for <span class="roblox-id">@bandu387</span> and add the guy named <b>Tangomango</b>!
         </p>
-        <p>
-            My favorite Roblox games are:
-            <div class="game-tag">Slap Battles</div>
-            <div class="game-tag">Fisch Bear Alpha</div>
-            <div class="game-tag">Sprunki RP</div>
-            <div class="game-tag">Baldi Sword Fight</div>
-        </p>
+        <p>My favorite Roblox games are:</p>
+    <div class="game-tags">
+    <div class="game-tag">Slap Battles</div>
+    <div class="game-tag">Fisch Bear Alpha</div>
+    <div class="game-tag">Sprunki RP</div>
+    <div class="game-tag">Baldi Sword Fight</div>
+    </div>
+
         <p>
             I always want to test new games and discover something awesome. Sometimes things go <b>BOOM</b> (in a good way)!
         </p>
