@@ -1,0 +1,21 @@
+backend:
+  name: github
+  repo: vloz73/adriancoolstuf.fun
+  branch: main
+  auth_scope: repo
+  client_id: 'Ov23li212qgUYYCHSaiZ'
+
+media_folder: "uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "posts"
+    label: "Champ Adrian's posts"
+    folder: "content/posts"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Image", name: "thumbnail", widget: "image" }
+      - { label: "Contents", name: "body", widget: "markdown" }
