@@ -3,46 +3,12 @@
   <head>
     <meta charset="utf-8" />
     <title>Adrian CMS</title>
-    <script>
-      window.CMS_MANUAL_INIT = true;
-    </script>
     <script src="https://unpkg.com/netlify-cms@^2.10.0/dist/netlify-cms.js" defer></script>
   </head>
   <body>
     <div id="nc-root"></div>
-    <script>
-      window.addEventListener('load', function () {
-        window.CMS.init({
-          config: {
-            backend: {
-              name: "github",
-              repo: "vloz73/adriancoolstuff",
-              branch: "main",
-              auth_scope: "repo",
-              client_id: "Ov23li212qgUYYCHSaiZ"
-            },
-            media_folder: "uploads",
-            public_folder: "/uploads",
-            collections: [
-              {
-                name: "posts",
-                label: "Champ Adrian's posts",
-                folder: "content/posts",
-                create: true,
-                slug: "{{slug}}",
-                fields: [
-                  { label: "Title", name: "title", widget: "string" },
-                  { label: "Date", name: "date", widget: "datetime" },
-                  { label: "Image", name: "thumbnail", widget: "image" },
-                  { label: "Contents", name: "body", widget: "markdown" }
-                ]
-              }
-            ]
-          }
-        });
-      });
-    </script>
   </body>
 </html>
+
 
 
