@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: vloz73/adriancoolstuf.fun
+  repo: repo: vloz73/adriancoolstuff
   branch: main
   auth_scope: repo
   client_id: 'Ov23li212qgUYYCHSaiZ'
