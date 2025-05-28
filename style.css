@@ -533,3 +533,24 @@ body.ocean-bg {
     transform: scale(1.07) rotate(-2deg);
     box-shadow: 0 8px 34px rgba(44,180,255,0.23);
 }
+
+.announcement {
+    background: linear-gradient(90deg, #56d3ff20 0%, #b6faff33 100%);
+    color: #01496c;
+    border-left: 6px solid #39a9db;
+    border-radius: 18px;           /* mocniej zaokrąglone rogi */
+    padding: 16px 22px;
+    margin: 32px 0 32px 0;
+    font-size: 1.1em;
+    box-shadow: 0 8px 32px rgba(50,160,255,0.11); /* delikatny cień */
+    transition: box-shadow 0.2s, border-radius 0.2s;
+}
+
+.announcement a {
+    color: #0b8ec9;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.announcement a:hover {
+    color: #27b6ff;
+}
