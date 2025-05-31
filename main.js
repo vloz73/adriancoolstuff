@@ -17,3 +17,75 @@ window.onload = function () {
             });
         });
 };
+
+const roblox = document.getElementById('robloxFigure');
+let onRight = true;
+
+// USTAW pozycję startową TYLKO raz
+roblox.style.left = '';
+roblox.style.right = '30px';
+
+function hop(times, duration, cb) {
+    let hops = 0;
+    const oneHop = duration / times;
+    function singleHop() {
+        roblox.animate([
+            { transform: 'translateY(0)' },
+            { transform: 'translateY(-40px)' },
+            { transform: 'translateY(0)' }
+        ], {
+            duration: oneHop * 1000,
+            easing: 'cubic-bezier(.4,-0.4,.8,1.6)'
+        });
+        hops++;
+        if (hops < times) {
+            setTimeout(singleHop, oneHop * 1000);
+        } else {
+            if (cb) setTimeout(cb, 60);
+        }
+    }
+    singleHop();
+}
+
+function moveFigure(toLeft, cb) {
+    // Kasujemy left/right żeby nigdy nie były jednocześnie
+    if (toLeft) {
+        roblox.style.transition = "left 2s";   // użyj tylko left
+        roblox.style.right = '';
+        roblox.style.left = '30px';
+    } else {
+        roblox.style.transition = "right 2s";  // użyj tylko right
+        roblox.style.left = '';
+        roblox.style.right = '30px';
+    }
+    setTimeout(cb, 2000);
+}
+
+function runLoop() {
+    let repeatHops = 0;
+    function repeatSideHops() {
+        hop(2, 6, () => {
+            repeatHops++;
+            if (repeatHops < 3) setTimeout(repeatSideHops, 0);
+            else doMove();
+        });
+    }
+    function doMove() {
+        hop(3, 2);
+        moveFigure(!onRight, () => {
+            onRight = !onRight;
+            repeatHops = 0;
+            setTimeout(runLoop, 100);
+        });
+    }
+    repeatSideHops();
+}
+
+runLoop();
+
+
+
+
+
+
+

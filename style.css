@@ -55,7 +55,8 @@ nav a:hover {
     margin-bottom: 25px;
 }
 footer {
-    margin-top: 30px;
+    margin-top: 0 !important;
+	padding-top: 0;
     padding: 20px;
     text-align: center;
     background: #43cea2;
@@ -535,15 +536,16 @@ body.ocean-bg {
 }
 
 .announcement {
-    background: linear-gradient(90deg, #56d3ff20 0%, #b6faff33 100%);
+    background: #d2f0fa;
     color: #01496c;
     border-left: 6px solid #39a9db;
-    border-radius: 18px;           /* mocniej zaokrąglone rogi */
-    padding: 16px 22px;
+    border-radius: 18px;
+    padding: 45px 22px 16px 22px;  /* <-- WAŻNE: padding-top: 32px */
     margin: 32px 0 32px 0;
     font-size: 1.1em;
-    box-shadow: 0 8px 32px rgba(50,160,255,0.11); /* delikatny cień */
+    box-shadow: 0 8px 32px rgba(50,160,255,0.11);
     transition: box-shadow 0.2s, border-radius 0.2s;
+    position: relative;             /* <-- WAŻNE */
 }
 
 .announcement a {
@@ -554,3 +556,486 @@ body.ocean-bg {
 .announcement a:hover {
     color: #27b6ff;
 }
+
+.light-blue-bg {
+    background: #eafaff !important; /* bardzo jasny błękit */
+}
+
+.announcement-message {
+    margin-bottom: 14px;
+    /* Możesz dodać np. padding lub inne efekty */
+}
+
+.announcement hr {
+    border: none;
+    border-top: 2px dashed #abd8ef;
+    margin: 18px 0;
+}
+
+.announcement-post {
+    background: #f8fbfe;
+    border-radius: 16px;
+    box-shadow: 0 4px 18px rgba(60,170,220,0.09);
+    margin: 22px 0 0 0;
+    padding: 30px 22px 16px 22px;
+    font-size: 1.05em;
+    color: #01496c;
+    border-left: 4px solid #a6defa;
+    position: relative;
+}
+.announcement-post:first-child {
+    margin-top: 0;
+}
+.announcement-date {
+    position: absolute;
+    top: 10px;
+    right: 18px;
+    color: #60aac9;
+    font-size: 0.88em;
+    font-weight: normal;
+    letter-spacing: 0.01em;
+    opacity: 0.72;
+    pointer-events: none;
+    user-select: none;
+    background: rgba(255,255,255,0.78);
+    padding: 2px 10px 1.5px 10px;
+    border-radius: 10px;
+    box-shadow: 0 1px 5px #b7e6fa38;
+    z-index: 2;
+}
+
+.announcement {
+    position: relative; /* to jest WAŻNE – pozwala .announcement-date się pozycjonować */
+}
+
+@media (max-width: 600px) {
+    .announcement-date {
+        right: 12px;
+        top: 10px;
+        font-size: 0.87em;
+    }
+    .announcement-post {
+        padding-right: 16px;
+    }
+}
+
+/* =================== STYLES FOR ROBLOX GARDEN PAGE =================== */
+
+body.garden-bg {
+    background: linear-gradient(120deg, #d4ffdf 0%, #b2f7c5 60%, #79e09c 100%);
+    color: #245a34;
+}
+.garden-theme {
+    background: rgba(255,255,255,0.93);
+    border-radius: 28px;
+    box-shadow: 0 6px 34px #97eeb244;
+    margin: 42px auto;
+    padding: 36px 28px 46px 28px;
+    position: relative;
+    max-width: 1020px;
+}
+.garden-theme h2 {
+    color: #39ad4a;
+    text-shadow: 0 1px 9px #aef1bd77;
+    margin-bottom: 18px;
+}
+.garden-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 36px 28px;
+    margin-top: 28px;
+    position: relative;
+    z-index: 10;
+}
+.plant-card {
+    background: #e9ffe7;
+    border-radius: 18px;
+    box-shadow: 0 2px 12px #9adb9b30;
+    padding: 18px 12px 24px 12px;
+    text-align: center;
+    position: relative;
+    transition: transform 0.18s;
+    z-index: 2;
+    overflow: visible;
+}
+.plant-card:hover {
+    transform: scale(1.03) rotate(-1deg);
+    box-shadow: 0 7px 22px #92e78d51;
+}
+.plant-img {
+    max-width: 100%;
+    max-height: 170px;
+    border-radius: 12px;
+    margin-bottom: 14px;
+    background: #b6eeb2;
+    box-shadow: 0 2px 12px #8dda9e30;
+    position: relative;
+    z-index: 1;
+}
+/* Rosa na roślinach */
+.dew-drops {
+    position: absolute;
+    left: 50%;
+    bottom: 16px;
+    transform: translateX(-50%);
+    z-index: 2;
+    pointer-events: none;
+}
+.dew-drop {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    position: relative;
+    background: #b0f2ff;
+    border-radius: 50%;
+    margin: 0 3px;
+	opacity: 0.70;
+    box-shadow: 0 0 12px #b6fff8cc, 0 0 8px #4ee8f5b0;
+    animation: dewWobble 2.6s infinite alternate;
+}
+
+.dew-drop::after {
+    content: "";
+    position: absolute;
+    top: 10%;
+    left: 12%;
+    width: 36%;
+    height: 36%;
+    background: radial-gradient(circle at 70% 35%, #fff 84%, #e6fcff 100%);
+    border-radius: 50%;
+    opacity: 0.85;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.dew-drop:nth-child(2) { width: 13px; height: 13px; opacity: 0.75; animation-delay: 0.8s;}
+.dew-drop:nth-child(3) { width: 10px; height: 10px; opacity: 0.62; animation-delay: 1.2s;}
+@keyframes dewWobble {
+    from { transform: translateY(0) scale(1);}
+    to   { transform: translateY(-3px) scale(1.15);}
+}
+.plant-desc {
+    font-size: 1.05em;
+    color: #388151;
+    margin-top: 4px;
+}
+/* Flying leaves particles */
+.leaf-particles {
+    position: fixed !important;
+    left: 0; top: 0;
+    width: 100vw; height: 100vh;
+    pointer-events: none;
+    z-index: 2147483647;
+    overflow: hidden;
+}
+.leaf {
+    position: absolute;
+    width: 38px; height: 38px;
+    opacity: 0.65;
+    animation: leafFloat 13s linear infinite;
+    filter: blur(0.5px);
+}
+.leaf.l1 { left: 8%; animation-duration: 9s; top: 92%; }
+.leaf.l2 { left: 28%; animation-duration: 15s; top: 95%; width: 32px; height: 32px;}
+.leaf.l3 { left: 55%; animation-duration: 13s; top: 98%; width: 28px; height: 28px;}
+.leaf.l4 { left: 74%; animation-duration: 11s; top: 100%; width: 30px; height: 30px;}
+.leaf.l5 { left: 92%; animation-duration: 14s; top: 94%; width: 42px; height: 42px;}
+@keyframes leafFloat {
+    0%   { transform: translateY(0) rotate(-30deg);}
+    60%  { opacity: .86;}
+    90%  { opacity: .13;}
+    100% { transform: translateY(-105vh) rotate(22deg); opacity: 0.08;}
+}
+/* Pszczółki animacja */
+.bee-particles {
+    position: fixed !important;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    pointer-events: none;
+    z-index: 2147483647;
+}
+.bee {
+    position: absolute;
+    width: 36px; height: 36px;
+    animation: beeFly 12s linear infinite;
+}
+.bee.b1 { left: 15%; top: 88%; animation-duration: 13s;}
+.bee.b2 { left: 65%; top: 93%; animation-duration: 11s;}
+@keyframes beeFly {
+    0%   { transform: translateY(0) scale(1) rotate(2deg);}
+    28%  { transform: translateY(-60vh) scale(1.13) rotate(-5deg);}
+    56%  { transform: translateY(-80vh) scale(0.95) rotate(12deg);}
+    80%  { transform: translateY(-90vh) scale(1.1) rotate(-8deg);}
+    100% { transform: translateY(-110vh) scale(1) rotate(0deg);}
+}
+/* Motylki animacja */
+.butterfly-particles {
+    position: fixed !important;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    pointer-events: none;
+    z-index: 2147483647;
+}
+.butterfly {
+    position: absolute;
+    width: 36px; height: 36px;
+    opacity: 0.8;
+    animation: butterflyFloat 19s linear infinite;
+}
+.butterfly.f1 { left: 34%; top: 85%; animation-duration: 19s;}
+.butterfly.f2 { left: 80%; top: 91%; width: 29px; height: 29px; animation-duration: 22s;}
+@keyframes butterflyFloat {
+    0%   { transform: translateY(0) scale(1) rotate(-10deg);}
+    25%  { transform: translateY(-50vh) scale(1.15) rotate(8deg);}
+    65%  { transform: translateY(-85vh) scale(1) rotate(-7deg);}
+    100% { transform: translateY(-110vh) scale(1.1) rotate(3deg);}
+}
+
+/* mrowki animacja */
+.ant-particles {
+    position: fixed !important;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    pointer-events: none;
+    z-index: 2147483647;
+}
+.ant {
+    position: absolute;
+    width: 36px; height: 36px;
+    animation: beeFly 12s linear infinite;
+}
+.ant.a1 { left: 45%; top: 88%; width: 25px; height: 25px; animation-duration: 13s;}
+.ant.a2 { left: 80%; top: 93%; width: 29px; height: 29px; animation-duration: 15s;}
+@keyframes antFly {
+    0%   { transform: translateY(0) scale(1) rotate(2deg);}
+    20%  { transform: translateY(-50vh) scale(1.13) rotate(-15deg);}
+    58%  { transform: translateY(-83vh) scale(0.95) rotate(11deg);}
+    86%  { transform: translateY(-92vh) scale(1.1) rotate(-10deg);}
+    100% { transform: translateY(-110vh) scale(1) rotate(0deg);}
+}
+/* =================== END STYLES FOR ROBLOX GARDEN =================== */
+
+.btn-bar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.btn {
+    background: #39a9db;
+    color: #fff;
+    padding: 13px 36px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.3em;
+    letter-spacing: 1px;
+    box-shadow: 0 3px 16px rgba(57,169,219,0.13);
+    transition: background 0.2s, color 0.2s, box-shadow 0.18s;
+    border: none;
+    outline: none;
+    display: inline-block;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.btn:hover {
+    background: #00b4d8;
+    color: #fff;
+    box-shadow: 0 5px 22px #00b4d866;
+}
+
+.grass-blades path {
+    transform-origin: 50% 100%;
+    transform-box: fill-box;
+    animation: grass-sway 4.7s ease-in-out infinite alternate;
+}
+@keyframes grass-sway {
+    from { transform: rotate(-8deg);}
+    to   { transform: rotate(8deg);}
+}
+
+.meadow {
+    position: relative;
+    width: 100%;
+    height: 110px;      /* Tyle co SVG */
+    min-height: 110px;
+    margin-bottom: -9px !important;
+	padding-bottom: 0 !important;
+    background: transparent;
+    overflow: visible;
+    z-index: 2;
+}
+
+.grass-svg-wrapper {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 110px;
+    z-index: 3;
+    pointer-events: none;
+	margin-bottom: 0 !important;
+	padding-bottom: 0 !important;
+}
+
+.flower {
+    position: absolute;
+    bottom: 35px;    /* <-- TYM PARAMETREM USTAWIASZ WYSOKOŚĆ! */
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    z-index: 10;
+    box-shadow: 0 0 10px #fff7;
+    animation: flowerWiggle 4.5s infinite alternate ease-in-out;
+}
+.flower::before {
+    content: "";
+    position: absolute;
+    bottom: -18px;
+    left: 50%;
+    width: 3px;
+    height: 18px;
+    background: #6bb866;
+    border-radius: 6px;
+    transform: translateX(-50%);
+    z-index: 1;
+    opacity: 0.76;
+}
+.flower.blue { background: #5ecbff; box-shadow: 0 0 16px #aeefff99; }
+.flower.red { background: #ff6262; box-shadow: 0 0 16px #ffb6b699;}
+.flower.yellow { background: #ffe561; box-shadow: 0 0 14px #fffabb99;}
+.flower.pink { background: #ff6bc7; box-shadow: 0 0 16px #ffbdf099;}
+.flower.orange { background: #ffac39; box-shadow: 0 0 14px #ffe0a299;}
+
+@keyframes flowerWiggle {
+    from { transform: translateY(0) rotate(-4deg);}
+    to   { transform: translateY(3px) rotate(5deg);}
+}
+
+.roblox-games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px 24px;
+    justify-items: center;
+}
+
+.roblox-game-card {
+    display: block;
+    background: linear-gradient(110deg, #eaf4fb 60%, #c1dafe 100%);
+    border-radius: 22px;
+    box-shadow: 0 4px 22px #9fd5ff36;
+    padding: 28px 22px 22px 22px;
+    min-width: 250px;
+    max-width: 350px;
+    text-align: center;
+    color: #184269;
+    text-decoration: none;
+    position: relative;
+    transition: transform 0.14s, box-shadow 0.17s;
+    border: 2.4px solid #c4e0ff;
+    font-family: inherit;
+}
+
+.roblox-game-card:hover {
+    transform: scale(1.03) rotate(-2deg);
+    box-shadow: 0 10px 34px #7bbcff51;
+    border-color: #63b4fc;
+}
+
+.roblox-logo-mini {
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    color: #f14545;
+    background: #fff;
+    border-radius: 9px;
+    padding: 3px 11px;
+    display: inline-block;
+    margin-bottom: 10px;
+    font-size: 1.15em;
+    box-shadow: 0 2px 10px #fd404016;
+}
+
+.play-link {
+    display: block;
+    margin-top: 16px;
+    color: #0067b7;
+    font-weight: bold;
+    font-size: 1.07em;
+    text-decoration: underline;
+    letter-spacing: 0.02em;
+}
+.play-link:hover {
+    color: #ff5555;
+}
+
+.sticky-roblox-figure {
+  position: fixed;
+  right: 32px;
+  bottom: -14px;
+  width: 180px;
+  z-index: 200;
+  pointer-events: none;
+  /* Animacja ruchu w poziomie i podskoków (współczesne przeglądarki) */
+  animation: roblox-slide-move 36s linear infinite;  /* 3x6s tu, 3x6s tam */
+}
+
+/* Najpierw ruch poziomy, potem podskakiwanie */
+@keyframes roblox-slide-move {
+  /* 0-49%: figura po prawej */
+  0%   { right: 32px; }
+  41.5%{ right: 32px; }
+  /* Przejazd w lewo */
+  50%  { right: 32px; }
+  58.5%{ right: calc(150vw - 220px); }
+  /* 50%-100%: figura po lewej */
+  91.5%{ right: calc(100vw - 122px);}
+  /* Powrót */
+  100% { right: 32px; }
+}
+
+/* Animacja podskoku - robiona na transform Y (osobna animacja, zsynchronizowana) */
+.sticky-roblox-figure {
+  animation-name: roblox-slide-move, roblox-bounce;
+  animation-duration: 36s, 6s;
+  animation-timing-function: linear, ease-in-out;
+  animation-iteration-count: infinite, infinite;
+}
+
+/* Animacja podskoku: dwa podskoki na 6 sekund (potem znowu) */
+@keyframes roblox-bounce {
+  0%, 100% {
+    transform: translateY(0);
+    filter: saturate(1) brightness(1);
+  }
+  5% {
+    transform: translateY(-22px);
+    filter: saturate(1.25) brightness(1.12);
+  }
+  25%, 40% {
+    transform: translateY(0);
+    filter: saturate(1.08) brightness(0.99);
+  }
+  30% {
+    transform: translateY(-18px);
+    filter: saturate(1.18) brightness(1.06);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
